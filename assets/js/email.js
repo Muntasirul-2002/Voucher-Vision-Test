@@ -11,13 +11,15 @@ document.getElementById('contact').addEventListener('submit', function(event) {
         mobile_no: document.getElementById('mobile_no').value,
         message: document.getElementById('message').value
     };
-    emailjs.send('service_uy6y6mr', 'template_9efvywa', {
+    // console.log('Form Data:', formData); 
+    emailjs.send('service_cuf6yiv', 'template_9efvywa', {
         name: formData.name,
         email_id: formData.email_id,
         mobile_no: formData.mobile_no,
         message: formData.message
     })
     .then(function(response) {
+        console.log('Email sent successfully:', response);
         showPopup();
         document.getElementById('contact').reset();
     })
