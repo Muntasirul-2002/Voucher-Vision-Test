@@ -4486,9 +4486,9 @@ ul {
   width: 85px;
   height: 85px;
   border-radius: 50%;
-  background-image: -moz-linear-gradient(90deg, rgb(28, 27, 31) 0%, rgb(255, 79, 71) 100%);
+  /* background-image: -moz-linear-gradient(90deg, rgb(28, 27, 31) 0%, rgb(255, 79, 71) 100%);
   background-image: -webkit-linear-gradient(90deg, rgba(255,102,0,255) 0%, rgba(1,0,128,255) 100%);
-  background-image: -ms-linear-gradient(90deg, rgba(255,102,0,255) 0%, rgba(1,0,128,255) 100%);
+  background-image: -ms-linear-gradient(90deg, rgba(255,102,0,255) 0%, rgba(1,0,128,255) 100%); */
 }
 .testmonials__user{
   border-radius: 50%;
@@ -5889,6 +5889,7 @@ ul {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .certificate-card:hover {
@@ -5901,41 +5902,67 @@ ul {
   object-fit: cover;
 }
 
-.certificate-info {
-  padding: 0.5rem;
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.certificate-title {
-  font-size: 1.25rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.certificate-date {
-  color: #666;
-  font-size: 0.9rem;
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
 }
 
-/* Responsive Design */
+.modal-image {
+  max-height: 85vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+.close-button:hover {
+  color: #ddd;
+}
+
+/* Your existing responsive styles */
 @media (max-width: 768px) {
   .certificates-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .certificate-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
     height: 35vh;
   }
   .section-title {
     font-size: 2rem;
   }
-
   .certificate-image {
-    width: 100%;
     height: 30vh;
   }
 }
@@ -5944,16 +5971,13 @@ ul {
   .certificates-section {
     padding: 2rem 1rem;
   }
-
   .section-title {
     font-size: 1.75rem;
   }
-
   .certificate-info {
     padding: 1rem;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Testimonial TWo

@@ -381,6 +381,12 @@
           </div>
         </div>
       </section>
+      <div class="modal" id="imageModal">
+        <div class="modal-content">
+          <button class="close-button" onclick="closeModal()">Close ×</button>
+          <img src="" alt="" class="modal-image" id="modalImage">
+        </div>
+      </div>
       <!-- Certificates section End -->
       <!--Testimonial Two Start-->
       <section class="testimonial-two" style="background-color: #ffffff">
@@ -522,7 +528,9 @@
                     <div class="testimonial-one__single">
                       <div class="testimonial-one__client-info">
                         <div class="testimonial-one__client-img-box">
-                          <div class="testimonial-one__client-img"></div>
+                          <div class="testimonial-one__client-img">
+                            <img src="/assets/images/testimonials/404-user.jpg" alt="">
+                          </div>
                         </div>
                         <div class="testimonial-one__client-details">
                           <h4 class="testimonial-one__client-name">
@@ -551,7 +559,9 @@
                     <div class="testimonial-one__single">
                       <div class="testimonial-one__client-info">
                         <div class="testimonial-one__client-img-box">
-                          <div class="testimonial-one__client-img"></div>
+                          <div class="testimonial-one__client-img">
+                            <img src="/assets/images/testimonials/404-user.jpg" alt="">
+                          </div>
                         </div>
                         <div class="testimonial-one__client-details">
                           <h4 class="testimonial-one__client-name">
@@ -580,7 +590,9 @@
                     <div class="testimonial-one__single">
                       <div class="testimonial-one__client-info">
                         <div class="testimonial-one__client-img-box">
-                          <div class="testimonial-one__client-img"></div>
+                          <div class="testimonial-one__client-img">
+                            <img src="/assets/images/testimonials/404-user.jpg" alt="">
+                          </div>
                         </div>
                         <div class="testimonial-one__client-details">
                           <h4 class="testimonial-one__client-name">
@@ -609,7 +621,9 @@
                     <div class="testimonial-one__single">
                       <div class="testimonial-one__client-info">
                         <div class="testimonial-one__client-img-box">
-                          <div class="testimonial-one__client-img"></div>
+                          <div class="testimonial-one__client-img">
+                            <img src="/assets/images/testimonials/404-user.jpg" alt="">
+                          </div>
                         </div>
                         <div class="testimonial-one__client-details">
                           <h4 class="testimonial-one__client-name">
@@ -844,7 +858,38 @@
 
     <!-- template js -->
     <script src="assets/js/amazepays.js"></script>
+    <script>
+      // Get modal elements
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      
+      // Add click event to all certificate images
+      document.querySelectorAll('.certificate-image').forEach(img => {
+        img.addEventListener('click', function() {
+          modal.classList.add('active');
+          modalImg.src = this.src;
+          modalImg.alt = this.alt;
+        });
+      });
+      
+      // Close modal function
+      function closeModal() {
+        modal.classList.remove('active');
+      }
+      
+      // Close modal when clicking outside the image
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+      </script>
   </body>
-
-  <!-- Mirrored from freneticindia.com/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Jan 2025 12:34:29 GMT -->
 </html>
