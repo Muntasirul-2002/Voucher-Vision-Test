@@ -2029,7 +2029,7 @@ ul {
 .logo {
   width: 11rem;
   height: 10rem;
-  margin-top: -2rem;
+  margin-top: -2.5rem;
 }
 
 .main-menu-three__left {
@@ -8605,7 +8605,7 @@ ul {
   background-position: top center;
   z-index: -1;
 }
-
+/* Developed by Muntasirul Islam, Email : muntasirul.msd@gmail.com */
 .page-header-bg:before {
   position: absolute;
   top: 0;
